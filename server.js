@@ -30,7 +30,7 @@ app.post('/save', urlencodedParser, (req, res) => {
     let player = req.body.player;
     let score = req.body.score;
     let date = new Date();
-    let str = `${player},${score},${date.toLocaleDateString()},${date.toLocaleTimeString()}\n`;
+    let str = `\n${player},${score},${date.toLocaleDateString()},${date.toLocaleTimeString()}`;
     fs.appendFile('./data/result.csv', str, function(err) {
         if (err) {
             console.error(err);
