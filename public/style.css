@@ -1,0 +1,18 @@
+html, body {
+  background-color: rgb(27, 26, 26);
+  user-select:none;
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.form{
+  color: white;
+  font-size: 120%;
+  text-shadow: 0 0 15px blue, 0 0 10px #FF0000;
+  padding-top: 30px;
+  padding-bottom: 90px;
+}
