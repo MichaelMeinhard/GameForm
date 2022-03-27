@@ -1,6 +1,11 @@
 let canvas, shrek, imgS, pozadi, wc, score, button;
 let wcs = [];
 let value = 0;
+
+const form = document.getElementById('form');
+const submit = document.querySelector('form button');
+const scoreP = document.getElementById('score');
+
 //let music;
 
 /*this.gravity = 1;
@@ -35,7 +40,7 @@ class Score {
   }
 /*výpočet score aby seděl*/
   count() {
-    value = Math.floor((frameCount - 200) / 160);
+    return value = Math.floor((frameCount - 200) / 160);
   }
 }
 
@@ -150,6 +155,8 @@ function draw() {
     /*výpis score hráče*/
     score.draw();
     setTimeout(score.count, 5000)
+    
+    form.style.display = 'none';
     /* Zde je naznačeno řešení kolizí - musíte zkontrolovat možnou kolizi 
     horního i spodního obdélníku s obdélníkem Shreka. */
     if (collideRectRect(wcs[i].x + 20, 0, wcs[i].w - 40, wcs[i].top - 45, shrek.x, shrek.y, 50, 50)
@@ -159,10 +166,12 @@ function draw() {
       fill(200, 30, 30);
       text("Game Over", width/2 - 250, height/2 - 100, 500, 300);
       text(`Your Score: ${value}`, width/2 - 280, height/2 + 10, 700, 300);
-
+      scoreP.value = score.count();
+      form.style.display = 'block';
+      
+  
       /* Počítá úplně všechny kolize obdélníků*/
       //console.log('Narazil jsi, Shreku!');
     }
   }
-  
 }

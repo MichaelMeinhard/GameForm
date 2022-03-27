@@ -19,7 +19,7 @@ app.get('/about', (req, res) => {
 
 app.get('/save', (req, res) => {
     let player = req.query.player;
-    let score = req.query.score;
+    let score = req.query.scoreP;
     res.send(`Hráč: ${player} | body: ${score}`);
     res.end();
 });
